@@ -252,9 +252,9 @@ get.partially.matching.reads <- function(workDir, sample_dir, BAMDir, BAMfile,
 
   ## convert to fastq
   cmd <- paste('picard.jar SamToFastq',
-    ' -I', sample_dir, '/fished.sam',
-    ' -F', sample_dir, '/fished.1.fastq',
-    ' -F2', sample_dir, '/fished.2.fastq',
+    ' -I ', sample_dir, '/fished.sam',
+    ' -F ', sample_dir, '/fished.1.fastq',
+    ' -F2 ', sample_dir, '/fished.2.fastq',
     ' -VALIDATION_STRINGENCY=SILENT', sep = '')
   logger(cmd)
   system(cmd)
@@ -908,9 +908,9 @@ run_LOHHLA <- function(opt) {
       logger('Turn (fished) reads into a fastq file')
       samToFastQ <- paste(
          'picard SortSam',
-        ' -I', sam_file,
-        ' -F', chr6.f1,
-        ' -F2', chr6.f2,
+        ' -I ', sam_file,
+        ' -F ', chr6.f1,
+        ' -F2 ', chr6.f2,
         # ' INCLUDE_NON_PF_READS=true',
         # ' INCLUDE_NON_PRIMARY_ALIGNMENTS=true',
         # ' INCLUDE_NON_PRIMARY_ALIGNMENTS=false',
@@ -1001,8 +1001,8 @@ run_LOHHLA <- function(opt) {
       # file.size(ref_bam)
 
       sortBAM <- paste('picard SortSam',
-        ' -I', sample_dir, '/', BAMid, '.chr6region.patient.reference.hlas.bam',
-        ' -O', sample_dir, '/', BAMid,
+        ' -I ', sample_dir, '/', BAMid, '.chr6region.patient.reference.hlas.bam',
+        ' -O ', sample_dir, '/', BAMid,
         '.chr6region.patient.reference.hlas.csorted.bam',
         ' -SORT_ORDER=coordinate', sep = '')
       logger(sortBAM)
