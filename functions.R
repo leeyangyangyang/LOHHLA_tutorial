@@ -911,6 +911,7 @@ run_LOHHLA <- function(opt) {
         ' -I ', sam_file,
         ' -F ', chr6.f1,
         ' -F2 ', chr6.f2,
+        ' --SORT_ORDER coordinate ',
         # ' INCLUDE_NON_PF_READS=true',
         # ' INCLUDE_NON_PRIMARY_ALIGNMENTS=true',
         # ' INCLUDE_NON_PRIMARY_ALIGNMENTS=false',
