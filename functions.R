@@ -1005,7 +1005,7 @@ run_LOHHLA <- function(opt) {
         ' -I ', sample_dir, '/', BAMid, '.chr6region.patient.reference.hlas.bam',
         ' -O ', sample_dir, '/', BAMid,
         '.chr6region.patient.reference.hlas.csorted.bam',
-        ' -SORT_ORDER=coordinate', sep = '')
+        ' --SORT_ORDER coordinate', sep = '')
       logger(sortBAM)
       system(sortBAM)
 
