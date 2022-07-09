@@ -251,7 +251,7 @@ get.partially.matching.reads <- function(workDir, sample_dir, BAMDir, BAMfile,
   system(cmd)
 
   ## convert to fastq
-  cmd <- paste('picard.jar SamToFastq',
+  cmd <- paste('picard SamToFastq',
     ' -I ', sample_dir, '/fished.sam',
     ' -F ', sample_dir, '/fished.1.fastq',
     ' -F2 ', sample_dir, '/fished.2.fastq',
@@ -907,11 +907,10 @@ run_LOHHLA <- function(opt) {
       ## seems to work ok just the same (VALIDATION_STRINGENCY = SILENT)
       logger('Turn (fished) reads into a fastq file')
       samToFastQ <- paste(
-        'picard SortSam',
+        'picard SamToFastq',
         ' -I ', sam_file,
         ' -F ', chr6.f1,
         ' -F2 ', chr6.f2,
-        ' --SORT_ORDER coordinate ',
         # ' INCLUDE_NON_PF_READS=true',
         # ' INCLUDE_NON_PRIMARY_ALIGNMENTS=true',
         # ' INCLUDE_NON_PRIMARY_ALIGNMENTS=false',
