@@ -1091,11 +1091,11 @@ run_LOHHLA <- function(opt) {
         } else {
           write_tsv(passed_reads, passed_reads_fn, col.names = F)
 
-          extractCMD <- paste0('java -jar ', gatkDir, '/picard.jar FilterSamReads',
-            ' I=', BAM_fn,
-            ' FILTER=includeReadList',
-            ' READ_LIST_FILE=', passed_reads_fn,
-            ' OUTPUT=', BAM_filtered_fn)
+          extractCMD <- paste0('picard FilterSamReads',
+            ' -I ', BAM_fn,
+            ' -FILTER includeReadList',
+            ' -READ_LIST_FILE ', passed_reads_fn,
+            ' -OUTPUT ', BAM_filtered_fn)
           logger(extractCMD)
           system(extractCMD)
 
